@@ -1,16 +1,20 @@
-# This is a sample Python script.
+from create_kit_name_kit_test import get_new_user_token, positive_assert
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+# Вот такое надо делать в тестах, но лучше один зраз запросить токен в начале тестов, в потом прокидывать его во все тесты
+token = get_new_user_token()
+positive_assert('Мой набор', token)
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+# Пример тестов c правильным получением токена
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+def test_1(anything, token):
+    print('test_1', anything, token)
+
+def test_2(anything, token):
+    print('test_2', anything, token)
+
+def run_all_tests():
+    token = get_new_user_token()
+
+    test_1(token)
+    test_2(token)
