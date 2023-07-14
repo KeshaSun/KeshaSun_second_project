@@ -1,7 +1,3 @@
-headers = {
-    "Content-Type": "application/json"
-}
-
 user_body = {
     "firstName": "Анатолий",
     "phone": "+79995553322",
@@ -9,6 +5,7 @@ user_body = {
 }
 
 kit_body = {
-       "name": "Мой набор"
-       }
+    "name": "Мой набор",
+    "cardId": "0"
+}
 
